@@ -1,0 +1,58 @@
+@import '../abstracts';
+
+.footer {
+  display: flex;
+  background-color: #555;
+  padding: 1rem 3rem;
+}
+
+.footer__section {
+  flex: 1;
+  color: white;
+  a {
+    color: white;
+  }
+}
+
+.footer__section__title {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+.footer__section__details {
+  margin: 0.5rem 0 0 1rem;
+  padding: 0;
+}
+
+@include breakpoint('medium') {
+  .footer__section {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .footer__section__title {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+  .footer__section__details {
+    margin: 0;
+  }
+}
+
+@include breakpoint('small') {
+  .footer {
+    flex-direction: column;
+    padding: 1rem 1rem;
+    padding-bottom: 0;
+  }
+  .footer__section {
+    text-align: start;
+    margin-bottom: 1rem;
+  }
+  .footer__section__title {
+    margin-bottom: 0.2rem;
+  }
+  .footer__section__details {
+    margin: 0 0 0 1rem;
+  }
+}

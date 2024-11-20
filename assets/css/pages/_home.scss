@@ -1,0 +1,105 @@
+@import '../abstracts/';
+
+// Services
+.services__section {
+  padding: 3rem 10rem;
+}
+.service {
+  padding: 2rem 0;
+  margin: 0;
+}
+.service__title {
+  margin: 0;
+  text-align: center;
+}
+.service__paragraph,
+.service__list {
+  margin: 0;
+}
+.service__paragraph {
+  text-align: justify;
+}
+.service__list {
+  text-align: center;
+}
+
+// Testitmonials
+.testimonials__title {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+.testimonial {
+  margin-bottom: 2rem;
+}
+.testim_pacient {
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+  font-weight: bold;
+  text-align: end;
+}
+.testim_paragraph {
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+}
+
+@include breakpoint('medium') {
+  .services__section {
+    padding: 5rem 5%;
+    padding-bottom: 1rem;
+  }
+  .service {
+    margin-bottom: 5rem;
+  }
+  .service__title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .service__paragraph,
+  .service__list {
+    text-align: center;
+    padding: 0;
+  }
+
+  // Testitmonials
+  .testimonials {
+    margin: 0;
+    padding: 0 5%;
+  }
+  .testimonials__title {
+    font-size: 3rem;
+  }
+  .testimonial {
+    margin-bottom: 3rem;
+  }
+  .testim_pacient {
+    font-size: 1.2rem;
+  }
+  .testim_paragraph {
+    font-size: 1.2rem;
+    text-align: justify;
+  }
+}
+
+@include breakpoint('small') {
+  .services__section {
+    padding: 5rem 1rem;
+    padding-bottom: 1rem;
+  }
+  .service__title {
+    font-size: 2rem;
+  }
+
+  // Testimonials
+  .testimonials {
+    margin: 0;
+    padding: 0 1rem;
+  }
+  .testimonials__title {
+    font-size: 2rem;
+  }
+}

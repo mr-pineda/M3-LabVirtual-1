@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Tío Pelado",
+    "job": "Cirujano Estético",
+    "profile": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem nemo quas quod praesentium necessitatibus iure, atque beatae minima placeat est, voluptatum perspiciatis. Laborum sit, qui illo quidem quae numquam reprehenderit ut adipisci. Quo id dolore aut suscipit molestiae repellat modi quisquam quia, natus saepe sint at perferendis aliquid non? Voluptatibus.",
+    "fonasa": false,
+    "img": "assets/img/doctor1.png",
+    "alt": "Foto Cirujano"
+  },
+  {
+    "name": "Freddy Turbina",
+    "job": "Traumatólogo",
+    "profile": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem nemo quas quod praesentium necessitatibus iure, atque beatae minima placeat est, voluptatum perspiciatis. Laborum sit, qui illo quidem quae numquam reprehenderit ut adipisci. Quo id dolore aut suscipit molestiae repellat modi quisquam quia, natus saepe sint at perferendis aliquid non? Voluptatibus.",
+    "fonasa": false,
+    "img": "assets/img/doctor2.jpg",
+    "alt": "Foto Traumatólogo"
+  },
+  {
+    "name": "John Quijada",
+    "job": "Cirujano Máxilo-Facial",
+    "profile": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem nemo quas quod praesentium necessitatibus iure, atque beatae minima placeat est, voluptatum perspiciatis. Laborum sit, qui illo quidem quae numquam reprehenderit ut adipisci. Quo id dolore aut suscipit molestiae repellat modi quisquam quia, natus saepe sint at perferendis aliquid non? Voluptatibus.",
+    "fonasa": true,
+    "img": "assets/img/doctor3.jpg",
+    "alt": "Foto Odontólogo"
+  },
+  {
+    "name": "Joe Pino",
+    "job": "Psicólogo",
+    "profile": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem nemo quas quod praesentium necessitatibus iure, atque beatae minima placeat est, voluptatum perspiciatis. Laborum sit, qui illo quidem quae numquam reprehenderit ut adipisci. Quo id dolore aut suscipit molestiae repellat modi quisquam quia, natus saepe sint at perferendis aliquid non? Voluptatibus.",
+    "fonasa": true,
+    "img": "assets/img/doctor4.jpg",
+    "alt": "Foto Psicologo"
+  }
+]

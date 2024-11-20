@@ -1,0 +1,98 @@
+@use '../abstracts';
+@import '../abstracts';
+
+.header {
+  background-color: abstracts.$color-primary-400;
+  display: flex;
+  justify-content: space-between;
+  // height: 60px;
+  position: sticky;
+  top: 0;
+}
+
+.header__logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px;
+  flex: 1;
+  .header__logo__img {
+    height: 3rem;
+    margin-right: 3px;
+  }
+  .header__logo__text {
+    color: white;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+.header__btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.header__btn__item {
+  margin: 0;
+  padding: 0 2rem;
+  border: none;
+  cursor: pointer;
+}
+.header__nav {
+  flex: 1;
+  display: flex;
+}
+.header__nav__link {
+  flex: 1;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.--current {
+  background-color: abstracts.$color-primary-600;
+}
+
+@include breakpoint('medium') {
+  .header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 60px;
+  }
+
+  .header__logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-content: center;
+    .header__logo__img {
+      height: 2.5rem;
+    }
+    .header__logo__text {
+      font-size: 1.5rem;
+    }
+  }
+
+  .header__btn {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .header__nav {
+    grid-column: 1/3;
+    grid-row: 2;
+  }
+}
+
+@include breakpoint('small') {
+  .header {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+}

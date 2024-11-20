@@ -1,0 +1,18 @@
+@use 'variables';
+
+/// Make a context based selector a little more friendly
+/// @author Kitty Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+/// Custom breakpoint function
+/// @param {String} $context
+@mixin breakpoint($breakpoint) {
+  @media (max-width: map-get(variables.$breakpoints, $breakpoint)) {
+    @content;
+  }
+}

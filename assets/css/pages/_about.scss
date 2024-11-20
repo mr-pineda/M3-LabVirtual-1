@@ -1,0 +1,77 @@
+@use '../abstracts';
+@import '../abstracts';
+
+.team__section {
+  padding: 5rem 4rem;
+}
+
+.doctor {
+  // display: flex;
+  margin-bottom: 3rem;
+  background-color: abstracts.$color-primary-100;
+  padding: 2rem 4rem;
+  border-radius: 20px;
+}
+
+.doctor__job {
+  font-style: italic;
+}
+.doctor__img {
+  border-radius: 50%;
+  margin: auto 0;
+}
+
+@include breakpoint('medium') {
+  .team__section {
+    padding: 2rem 5%;
+  }
+  .doctor {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .doctor__info {
+    text-align: center;
+    margin: 0;
+  }
+  .doctor__name {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  .doctor__job {
+    font-size: 2rem;
+    margin: 0;
+  }
+  .doctor__img {
+    margin: 1.5rem 0 0 0;
+    // width: 40%;
+  }
+  .doctor__profile {
+    margin: 1.5rem 0 1rem 0;
+    text-align: justify;
+  }
+}
+
+@include breakpoint('small') {
+  // Team
+  .team__section {
+    padding: 2rem 0;
+  }
+  .doctor {
+    flex-direction: column;
+  }
+  .doctor__name {
+    font-size: 2rem;
+  }
+  .doctor__job {
+    font-size: 1.5rem;
+  }
+  .doctor__img {
+    margin: 0 0 1.5rem 0;
+    margin: 0;
+    width: 60%;
+  }
+}
