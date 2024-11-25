@@ -7,8 +7,26 @@ async function loadDoctors() {
       console.error(`Response status: ${Response.status}`);
       return null;
     }
-    const data = await res.json();
-    return data;
+    const doctorsData = await res.json();
+    // Usando JSON Stringify para mostrar los datos cargados
+    console.log(
+      'doctors.json file content:\n',
+      JSON.stringify(doctorsData, null, 2)
+    );
+
+    // Creando copia de doctores y mostrando datos en consola
+    const doctors_copy = JSON.parse(JSON.stringify(doctorsData));
+    console.log('Prueba de clonanción: (nombre 1er doctor)');
+    console.log(
+      `Original: ${doctorsData[0].name}  |  Copia: ${doctors_copy[0].name}  `
+    );
+    doctors_copy[0].name = 'Tio Pirata';
+    console.log('Despues de Cambiar el nombre');
+    console.log(
+      `Original: ${doctorsData[0].name}  |  Copia: ${doctors_copy[0].name}  `
+    );
+
+    return doctorsData;
   } catch (e) {
     console.error('Ups, something happen:', e);
     return null;
@@ -41,6 +59,8 @@ const translateDays = (day) => {
   }
 };
 
+// Función que crea las Card de los doctores y ademas muestra por consola los datos
+// La funcion usa asignación por destructuración
 function createDoctorCard({ name, job, profile, fonasa, img, alt, schedule }) {
   console.log('doctor: ', name);
   console.log('especialidad: ', job);
