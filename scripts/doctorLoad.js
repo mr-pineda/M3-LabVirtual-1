@@ -1,4 +1,17 @@
-document.addEventListener('DOMContentLoaded', listServices);
+document.addEventListener('DOMContentLoaded', listDoctors);
+async function loadServices() {
+  try {
+    const res = await fetch('./scripts/services.json');
+    if (!res.ok) {
+      console.error(`Response status: ${Response.status}`);
+      return null;
+    }
+    return await res.json();
+  } catch (e) {
+    console.error('Ups, something happen:', e);
+    return null;
+  }
+}
 
 async function loadDoctors() {
   try {
@@ -158,11 +171,21 @@ function createDoctorCard({ name, job, profile, fonasa, img, alt, schedule }) {
   return doctorCard;
 }
 
-async function listServices() {
+async function listDoctors() {
   try {
     const listContainer = document.getElementById('doctor_list');
     const fonasaCheckbox = document.getElementById('fonasaOnlyCheckbox');
     const doctors = await loadDoctors();
+    const services = await loadServices();
+
+    // Merge de 2 objetos JSON
+    doctors.forEach((doctor) => {
+      services.forEach((element) => {
+        if (doctor.name === element.doctor) doctor.services = element.services;
+      });
+    });
+    console.log(doctors);
+
     if (!doctors) return;
     doctors.forEach((doctor) =>
       listContainer.appendChild(createDoctorCard(doctor))
