@@ -1,0 +1,18 @@
+[
+  {
+    "doctor": "Tío Pelado",
+    "services": ["Medicina General", "Cardiología", "Cirugía"]
+  },
+  {
+    "doctor": "Freddy Turbina",
+    "services": ["Traumatología", "Kinesiología"]
+  },
+  {
+    "doctor": "John Quijada",
+    "services": ["Cirugía Máxilo-Facial", "Rehabilitación Oral"]
+  },
+  {
+    "doctor": "Joe Pino",
+    "services": ["Psicología", "Psiquiatría"]
+  }
+]

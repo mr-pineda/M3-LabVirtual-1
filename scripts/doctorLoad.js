@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', displayCards);
+document.addEventListener('DOMContentLoaded', listServices);
 
 async function loadDoctors() {
   try {
@@ -158,7 +158,7 @@ function createDoctorCard({ name, job, profile, fonasa, img, alt, schedule }) {
   return doctorCard;
 }
 
-async function displayCards() {
+async function listServices() {
   try {
     const listContainer = document.getElementById('doctor_list');
     const fonasaCheckbox = document.getElementById('fonasaOnlyCheckbox');
