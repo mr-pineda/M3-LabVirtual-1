@@ -38,6 +38,6 @@ En todas las pantallas Hay un boton para agendar Hora, el cual solicita datos me
 ## TO-DO (Rúbrica)
 
 - [x] **Manejo de Objetos JSON:** Se implementa correctamente un objeto JSON con los datos de los doctores, incluyendo objetos anidados y uso de destructuring. La información se muestra correctamente en la consola y en la interfaz web.
-- [ ] **Operaciones con JSON:** Las operaciones de clonación, merge, y recorrido se implementan correctamente. La conversión a JSON string con stringify se muestra en la consola.
+- [x] **Operaciones con JSON:** Las operaciones de clonación, merge, y recorrido se implementan correctamente. La conversión a JSON string con stringify se muestra en la consola.
 - [ ] **Implementación de Estructuras de Datos:** Se implementan correctamente las estructuras de datos solicitadas (arreglos, pilas y colas) y se realizan operaciones básicas como agregar, eliminar o buscar datos en los arreglos. Las pilas y colas gestionan correctament e los datos de citas o pacientes.
 - [ ] **Programación de Algoritmos:** Se implementa correctamente un algoritmo de búsqueda y uno de ordenamiento, explicando en el README la complejidad de los algoritmos aplicados (Big-O y complejidad ciclomática).
