@@ -4,6 +4,15 @@
     "job": "Cirujano Estético",
     "profile": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem nemo quas quod praesentium necessitatibus iure, atque beatae minima placeat est, voluptatum perspiciatis. Laborum sit, qui illo quidem quae numquam reprehenderit ut adipisci. Quo id dolore aut suscipit molestiae repellat modi quisquam quia, natus saepe sint at perferendis aliquid non? Voluptatibus.",
     "fonasa": false,
+    "schedule": {
+      "mon": "10:00-14:00",
+      "tue": "10:00-14:00",
+      "wed": "10:00-14:00",
+      "thu": "10:00-14:00",
+      "fri": "10:00-14:00",
+      "sat": "none",
+      "sun": "none"
+    },
     "img": "assets/img/doctor1.png",
     "alt": "Foto Cirujano"
   },
@@ -12,6 +21,15 @@
     "job": "Traumatólogo",
     "profile": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem nemo quas quod praesentium necessitatibus iure, atque beatae minima placeat est, voluptatum perspiciatis. Laborum sit, qui illo quidem quae numquam reprehenderit ut adipisci. Quo id dolore aut suscipit molestiae repellat modi quisquam quia, natus saepe sint at perferendis aliquid non? Voluptatibus.",
     "fonasa": false,
+    "schedule": {
+      "mon": "12:00-18:00",
+      "tue": "12:00-18:00",
+      "wed": "12:00-18:00",
+      "thu": "12:00-18:00",
+      "fri": "12:00-18:00",
+      "sat": "10:00-14:00",
+      "sun": "10:00-14:00"
+    },
     "img": "assets/img/doctor2.jpg",
     "alt": "Foto Traumatólogo"
   },
@@ -20,6 +38,15 @@
     "job": "Cirujano Máxilo-Facial",
     "profile": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem nemo quas quod praesentium necessitatibus iure, atque beatae minima placeat est, voluptatum perspiciatis. Laborum sit, qui illo quidem quae numquam reprehenderit ut adipisci. Quo id dolore aut suscipit molestiae repellat modi quisquam quia, natus saepe sint at perferendis aliquid non? Voluptatibus.",
     "fonasa": true,
+    "schedule": {
+      "mon": "10:00-18:00",
+      "tue": "10:00-18:00",
+      "wed": "10:00-18:00",
+      "thu": "10:00-18:00",
+      "fri": "10:00-18:00",
+      "sat": "9:00-13:00",
+      "sun": "none"
+    },
     "img": "assets/img/doctor3.jpg",
     "alt": "Foto Odontólogo"
   },
@@ -28,6 +55,15 @@
     "job": "Psicólogo",
     "profile": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem nemo quas quod praesentium necessitatibus iure, atque beatae minima placeat est, voluptatum perspiciatis. Laborum sit, qui illo quidem quae numquam reprehenderit ut adipisci. Quo id dolore aut suscipit molestiae repellat modi quisquam quia, natus saepe sint at perferendis aliquid non? Voluptatibus.",
     "fonasa": true,
+    "schedule": {
+      "mon": "10:00-18:00",
+      "tue": "10:00-18:00",
+      "wed": "10:00-18:00",
+      "thu": "10:00-18:00",
+      "fri": "10:00-18:00",
+      "sat": "10:00-14:00",
+      "sun": "10:00-14:00"
+    },
     "img": "assets/img/doctor4.jpg",
     "alt": "Foto Psicologo"
   }

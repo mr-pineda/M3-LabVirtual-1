@@ -15,46 +15,125 @@ async function loadDoctors() {
   }
 }
 
-function createDoctorCard({ name, job, profile, fonasa, img, alt }) {
+const addClasses = (element, classString) => {
+  const classList = classString.trim().split(' ');
+  classList.forEach((bootstrapClass) => {
+    element.classList.add(bootstrapClass);
+  });
+};
+
+const translateDays = (day) => {
+  switch (day) {
+    case 'mon':
+      return 'Lunes';
+    case 'tue':
+      return 'Martes';
+    case 'wed':
+      return 'Miércoles';
+    case 'thu':
+      return 'Jueves';
+    case 'fri':
+      return 'Viernes';
+    case 'sat':
+      return 'Sábado';
+    case 'sun':
+      return 'Domingo';
+  }
+};
+
+function createDoctorCard({ name, job, profile, fonasa, img, alt, schedule }) {
+  console.log('doctor: ', name);
+  console.log('especialidad: ', job);
+  console.log('perfil: ', profile);
+  console.log('acepta fonasa?: ', fonasa);
+
   const doctorCard = document.createElement('article');
-  doctorCard.classList.add('doctor');
-  doctorCard.classList.add('row');
+  addClasses(doctorCard, 'card mb-3');
+  doctorCard.style.width = '100%';
+
+  const responsiveContainer = document.createElement('div');
+  addClasses(responsiveContainer, 'row g-0');
+
+  const imgContainer = document.createElement('div');
+  addClasses(
+    imgContainer,
+    'col-md-4 d-flex justify-content-center align-items-center'
+  );
 
   const doctorImg = document.createElement('img');
-  doctorImg.classList.add('doctor__img');
-  doctorImg.classList.add('col-6');
-  doctorImg.classList.add('col-lg-3');
+  addClasses(doctorImg, 'img-fluid rounded');
   doctorImg.src = img;
   doctorImg.alt = alt;
 
-  const doctorInfo = document.createElement('div');
-  doctorInfo.classList.add('doctor__info');
-  doctorInfo.classList.add('col');
+  imgContainer.appendChild(doctorImg);
+  responsiveContainer.appendChild(imgContainer);
 
-  const doctorName = document.createElement('h1');
-  doctorName.classList.add('doctor__name');
+  const responsiveBodyContainer = document.createElement('div');
+  responsiveBodyContainer.classList.add('col-md-8');
+
+  const cardBody = document.createElement('div');
+  cardBody.classList.add('card-body');
+
+  const doctorName = document.createElement('h4');
+  doctorName.classList.add('card-title');
   doctorName.textContent = name;
 
-  const doctorJob = document.createElement('h2');
-  doctorJob.classList.add('doctor__job');
+  const doctorJob = document.createElement('h5');
+  addClasses(doctorJob, 'card-subtitle mb-2 text-body-secondary');
   doctorJob.textContent = job;
 
-  const acceptFonasa = document.createElement('h5');
+  const acceptFonasa = document.createElement('h6');
+  addClasses(acceptFonasa, 'card-subtitle mb-3');
   acceptFonasa.textContent = fonasa
-    ? 'Atiende por Fonasa e Isapre'
-    : 'Atiende solo por Isapre';
+    ? 'Convenio con Isapre y Fonasa'
+    : 'Convenio exclusivo con Isapre';
 
   const doctorProfile = document.createElement('p');
-  doctorProfile.classList.add('doctor__profile');
+  doctorProfile.classList.add('card-text');
   doctorProfile.textContent = profile;
 
-  doctorInfo.appendChild(doctorName);
-  doctorInfo.appendChild(doctorJob);
-  doctorInfo.appendChild(acceptFonasa);
-  doctorInfo.appendChild(doctorProfile);
+  const scheduleList = document.createElement('div');
+  addClasses(scheduleList, 'mx-3');
+  const days = document.createElement('div');
+  addClasses(days, 'row border');
+  const workTime = document.createElement('div');
+  addClasses(workTime, 'row border');
+  console.log('Horario de atencion: ');
+  for (let key in schedule) {
+    const dayContainer = document.createElement('div');
+    addClasses(
+      dayContainer,
+      'col d-flex justify-content-center align-items-center'
+    );
+    const day = document.createElement('p');
+    addClasses(day, 'text-align-center fw-bold');
+    day.innerText = translateDays(key);
+    dayContainer.appendChild(day);
+    days.appendChild(dayContainer);
 
-  doctorCard.appendChild(doctorImg);
-  doctorCard.appendChild(doctorInfo);
+    const workContainer = document.createElement('div');
+    addClasses(
+      workContainer,
+      'col d-flex justify-content-center align-items-center'
+    );
+    const dayWork = document.createElement('p');
+    dayWork.innerText = schedule[key] !== 'none' ? schedule[key] : '---';
+    workContainer.appendChild(dayWork);
+    workTime.appendChild(workContainer);
+    console.log(`  ${translateDays(key)}: ${schedule[key]}`);
+  }
+  scheduleList.appendChild(days);
+  scheduleList.appendChild(workTime);
+
+  cardBody.appendChild(doctorName);
+  cardBody.appendChild(doctorJob);
+  cardBody.appendChild(acceptFonasa);
+  cardBody.appendChild(doctorProfile);
+  responsiveBodyContainer.appendChild(cardBody);
+  responsiveBodyContainer.appendChild(scheduleList);
+  responsiveContainer.appendChild(responsiveBodyContainer);
+
+  doctorCard.appendChild(responsiveContainer);
 
   return doctorCard;
 }
