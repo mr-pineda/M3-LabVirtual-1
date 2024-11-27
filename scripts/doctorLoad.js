@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', listDoctors);
+
+let doctors = null;
+let fonasaOnly = false;
+
 async function loadServices() {
   try {
     const res = await fetch('./scripts/services.json');
@@ -74,11 +78,21 @@ const translateDays = (day) => {
 
 // Función que crea las Card de los doctores y ademas muestra por consola los datos
 // La funcion usa asignación por destructuración
-function createDoctorCard({ name, job, profile, fonasa, img, alt, schedule }) {
+function createDoctorCard({
+  name,
+  job,
+  profile,
+  fonasa,
+  img,
+  alt,
+  schedule,
+  services,
+}) {
   console.log('doctor: ', name);
   console.log('especialidad: ', job);
   console.log('perfil: ', profile);
   console.log('acepta fonasa?: ', fonasa);
+  console.log('servicios: ', services);
 
   const doctorCard = document.createElement('article');
   addClasses(doctorCard, 'card mb-3');
@@ -95,7 +109,7 @@ function createDoctorCard({ name, job, profile, fonasa, img, alt, schedule }) {
 
   const doctorImg = document.createElement('img');
   addClasses(doctorImg, 'img-fluid rounded');
-  doctorImg.src = img;
+  doctorImg.src = img ? img : 'assets/img/no-image.png';
   doctorImg.alt = alt;
 
   imgContainer.appendChild(doctorImg);
@@ -175,7 +189,9 @@ async function listDoctors() {
   try {
     const listContainer = document.getElementById('doctor_list');
     const fonasaCheckbox = document.getElementById('fonasaOnlyCheckbox');
-    const doctors = await loadDoctors();
+
+    // Se carga lista de doctores solo si esta no existe o está vacia
+    if (!doctors || !doctors.length) doctors = await loadDoctors();
     const services = await loadServices();
 
     // Merge de 2 objetos JSON
@@ -213,4 +229,37 @@ async function listDoctors() {
     listContainer.innerHTML = '';
     listContainer.appendChild(errorMsg);
   }
+}
+
+// Funcion que añade un nuevo doctor al arreglo de doctores
+function addDoctor() {
+  try {
+    const name = prompt('Nombre del doctor:');
+    const job = prompt('Especialidad:');
+    const img = 'assets/img/no-image.png';
+    const alt = `Foto ${job}`;
+    const profile =
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem nemo quas quod praesentium necessitatibus iure, atque beatae minima placeat est, voluptatum perspiciatis. Laborum sit, qui illo quidem quae numquam reprehenderit ut adipisci. Quo id dolore aut suscipit molestiae repellat modi quisquam quia, natus saepe sint at perferendis aliquid non? Voluptatibus.';
+    const fonasa = ['si', 'sí'].includes(
+      prompt('acepta fonasa (responda sí o no)').trim().toLowerCase()
+    );
+    const schedule = {
+      mon: '09:00-18:00',
+      tue: '09:00-18:00',
+      wed: '09:00-18:00',
+      thu: '09:00-18:00',
+      fri: '09:00-18:00',
+      sat: '09:00-14:00',
+      sun: '09:00-14:00',
+    };
+
+    doctors.push({ name, job, img, alt, profile, fonasa, schedule });
+    listDoctors();
+  } catch {
+    alert('No se pudo añadir el doctor');
+  }
+}
+
+function findDoctor() {
+  const search = document.getElementById('search').value;
 }

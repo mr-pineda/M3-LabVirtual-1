@@ -1,5 +1,19 @@
 const button = document.getElementById('appointmentBtn');
 
+class Appointments {
+  constructor() {
+    this.appointments = [];
+  }
+  push(appointment) {
+    this.appointments.push(appointment);
+  }
+  pop() {
+    return this.appointments.pop();
+  }
+}
+
+const appointments = new Appointments();
+
 button.addEventListener('click', () => {
   let name = prompt('Ingrese su nombre y apellido:').trim();
   if (name === null) return;
@@ -40,8 +54,16 @@ button.addEventListener('click', () => {
   console.log('correo:', email);
   console.log('telefono:', phone);
 
+  appointments.push({ name, email, phone });
+  console.log(
+    'Elementos en la pila de citas: ',
+    appointments.appointments.length
+  );
   alert(`Se ingresaron los siguientes datos:
     Nombre: ${name}
     correo: ${email}
-    Teléfono: ${phone}`);
+    Teléfono: ${phone}
+    
+    Lo contactaremos enseguida.
+    `);
 });
