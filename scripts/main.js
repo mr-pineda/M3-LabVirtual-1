@@ -1,5 +1,9 @@
 const button = document.getElementById('appointmentBtn');
 
+// Pila (Clase) para gestionar lista de citas
+// Solo permite las acciones push (añadir elemento al final)
+// u pop extraer el pop (extraer el último elemento de la lista)
+// implementando una arquitectura FIFO.
 class Appointments {
   constructor() {
     this.appointments = [];

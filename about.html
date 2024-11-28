@@ -68,20 +68,26 @@
           Agregar doctor
         </button>
       </div>
+      <div class="col d-flex justify-content-center align-items-center">
+        <button type="button" class="btn btn-primary" onclick="sortDoctors()">
+          Ordenar por años
+        </button>
+      </div>
       <div
         class="col input-group d-flex justify-content-center align-items-center"
       >
-        <input
+        <!-- <input
           type="text"
           class="form-control"
+          id="search"
           placeholder="Nombre del Doctor"
           aria-label="Recipient's username"
           aria-describedby="button-addon2"
-        />
+        /> -->
         <button
           class="btn btn-outline-secondary"
           type="button"
-          id="button-addon2"
+          onclick="findDoctor()"
         >
           Buscar
         </button>

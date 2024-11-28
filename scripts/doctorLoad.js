@@ -200,8 +200,8 @@ async function listDoctors() {
         if (doctor.name === element.doctor) doctor.services = element.services;
       });
     });
-    console.log(doctors);
-
+    // console.log(doctors);
+    listContainer.innerHTML = '';
     if (!doctors) return;
     doctors.forEach((doctor) =>
       listContainer.appendChild(createDoctorCard(doctor))
@@ -260,6 +260,34 @@ function addDoctor() {
   }
 }
 
-function findDoctor() {
-  const search = document.getElementById('search').value;
+async function findDoctor() {
+  // const search = document.getElementById('search').value;
+  const search = prompt('Ingrese nombre o especialidad').trim().toLowerCase();
+
+  doctors = await loadDoctors();
+
+  if (search !== '' || search !== null) {
+    // Búsqueda lineal O(n)
+    const filteredDoctor = [];
+    doctors.forEach((doctor) => {
+      if (
+        doctor.name.toLowerCase().includes(search) ||
+        doctor.job.toLowerCase().includes(search)
+      )
+        filteredDoctor.push(doctor);
+    });
+    doctors = filteredDoctor;
+  }
+  listDoctors();
+}
+
+async function sortDoctors() {
+  for (let i = 0; i < doctors.length - 1; i++) {
+    for (let j = i + 1; j < doctors.length; j++) {
+      if (doctors[i].years < doctors[j].years)
+        [doctors[j], doctors[i]] = [doctors[i], doctors[j]];
+    }
+  }
+  doctors.forEach((doctor) => console.log(doctor.years));
+  listDoctors();
 }

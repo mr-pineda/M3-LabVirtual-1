@@ -13,6 +13,7 @@
       "sat": "none",
       "sun": "none"
     },
+    "years": 5,
     "img": "assets/img/doctor1.png",
     "alt": "Foto Cirujano"
   },
@@ -30,6 +31,7 @@
       "sat": "10:00-14:00",
       "sun": "10:00-14:00"
     },
+    "years": 6,
     "img": "assets/img/doctor2.jpg",
     "alt": "Foto Traumatólogo"
   },
@@ -47,6 +49,7 @@
       "sat": "9:00-13:00",
       "sun": "none"
     },
+    "years": 4,
     "img": "assets/img/doctor3.jpg",
     "alt": "Foto Odontólogo"
   },
@@ -64,6 +67,7 @@
       "sat": "10:00-14:00",
       "sun": "10:00-14:00"
     },
+    "years": 7,
     "img": "assets/img/doctor4.jpg",
     "alt": "Foto Psicologo"
   }
