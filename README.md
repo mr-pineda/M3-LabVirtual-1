@@ -37,6 +37,8 @@ En todas las pantallas Hay un boton para agendar Hora, el cual solicita datos me
 
 ## Algoritmos
 
+En el archivo [doctorsLoad.js](/scripts/doctorLoad.js) se encuentran los algoritmos de búsqueda y de ordenamiento para la lista de doctores. Para buscar doctores se aplica un algoritmo de **búsqueda lineal** y la ordenar los doctores se aplica el algoritmo de **Ordenamiento por selección**
+
 ### Algoritmo de busqueda lineal
 
 Para buscar un `valor` en una lista de tamaño `n`, se recorre la lista desde el primer elemento, comparando el valor de cada elemento de la lista con el `valor` buscado.
@@ -161,5 +163,5 @@ Al ser menor de 10, se considera un código bien estructurado.
 
 - [x] **Manejo de Objetos JSON:** Se implementa correctamente un objeto JSON con los datos de los doctores, incluyendo objetos anidados y uso de destructuring. La información se muestra correctamente en la consola y en la interfaz web.
 - [x] **Operaciones con JSON:** Las operaciones de clonación, merge, y recorrido se implementan correctamente. La conversión a JSON string con stringify se muestra en la consola.
-- [ ] **Implementación de Estructuras de Datos:** Se implementan correctamente las estructuras de datos solicitadas (arreglos, pilas y colas) y se realizan operaciones básicas como agregar, eliminar o buscar datos en los arreglos. Las pilas y colas gestionan correctament e los datos de citas o pacientes.
+- [ ] **Implementación de Estructuras de Datos:** Se implementan correctamente las estructuras de datos solicitadas (arreglos, pilas y colas) y se realizan operaciones básicas como agregar, eliminar o buscar datos en los arreglos. Las pilas y colas gestionan correctamente los datos de citas o pacientes.
 - [x] **Programación de Algoritmos:** Se implementa correctamente un algoritmo de búsqueda y uno de ordenamiento, explicando en el README la complejidad de los algoritmos aplicados (Big-O y complejidad ciclomática).
