@@ -261,13 +261,9 @@ function addDoctor() {
 }
 
 async function findDoctor() {
-  // const search = document.getElementById('search').value;
   const search = prompt('Ingrese nombre o especialidad').trim().toLowerCase();
-
-  doctors = await loadDoctors();
-
   if (search !== '' || search !== null) {
-    // Búsqueda lineal O(n)
+    doctors = await loadDoctors();
     const filteredDoctor = [];
     doctors.forEach((doctor) => {
       if (
